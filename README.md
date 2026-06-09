@@ -28,29 +28,40 @@ SiRapi tidak memerlukan instalasi aplikasi atau modul tambahan.
 
 ## Menjalankan File yang Sudah Diunduh
 
-Misalnya, SiRapi disimpan di:
+Misalnya, SiRapi disimpan/diekstrak di:
 
 ```text
 D:\SiRapi\SiRapi.ps1
 ```
 
-### 1. Buka Blokir Keamanan (Wajib untuk File Hasil Unduhan)
+Buka PowerShell, kemudian ikuti langkah-langkah berikut:
 
-Karena Windows memblokir file skrip yang diunduh dari internet secara default, Anda wajib membuka blokirnya sekali saja sebelum dijalankan:
+### 1. Pindah ke Folder Tempat SiRapi Berada
 
-```powershell
-Unblock-File "D:\SiRapi\SiRapi.ps1"
-```
-
-### 2. Jalankan Skrip
-
-Buka PowerShell, kemudian jalankan:
+Ketik perintah ini di PowerShell untuk masuk ke folder tempat file skrip disimpan:
 
 ```powershell
-& "D:\SiRapi\SiRapi.ps1"
+d:
+cd "D:\SiRapi"
 ```
 
-Tanda `&` digunakan PowerShell untuk menjalankan file skrip berdasarkan lokasinya.
+*(Sesuaikan huruf drive `d:` dan nama folder `"D:\SiRapi"` dengan lokasi penyimpanan Anda).*
+
+### 2. Buka Blokir Keamanan (Wajib untuk File Hasil Unduhan)
+
+Karena Windows secara otomatis memblokir file skrip yang diunduh dari internet, Anda wajib membuka blokirnya **sekali saja** agar skrip diizinkan berjalan:
+
+```powershell
+Unblock-File .\SiRapi.ps1
+```
+
+### 3. Jalankan Skrip
+
+Setelah berada di folder yang tepat dan blokir keamanan dibuka, Anda dapat menjalankan skrip secara langsung menggunakan perintah berikut:
+
+```powershell
+.\SiRapi.ps1
+```
 
 ### Jika Tidak Mengetahui Lokasi SiRapi
 
