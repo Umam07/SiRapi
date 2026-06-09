@@ -34,6 +34,16 @@ Misalnya, SiRapi disimpan di:
 D:\SiRapi\SiRapi.ps1
 ```
 
+### 1. Buka Blokir Keamanan (Wajib untuk File Hasil Unduhan)
+
+Karena Windows memblokir file skrip yang diunduh dari internet secara default, Anda wajib membuka blokirnya sekali saja sebelum dijalankan:
+
+```powershell
+Unblock-File "D:\SiRapi\SiRapi.ps1"
+```
+
+### 2. Jalankan Skrip
+
 Buka PowerShell, kemudian jalankan:
 
 ```powershell
