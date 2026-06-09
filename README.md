@@ -206,44 +206,36 @@ Gunakan parameter ini hanya jika lokasi folder sudah dipastikan benar.
 
 Ya, SiRapi dapat dijalankan langsung dari GitHub menggunakan `irm | iex` tanpa menyimpan file skrip.
 
-Format URL Raw GitHub:
-
-```text
-https://raw.githubusercontent.com/Umam07/SiRapi/main/SiRapi.ps1
-```
-
 Contoh perintah:
 
 ```powershell
-irm "https://raw.githubusercontent.com/Umam07/SiRapi/main/SiRapi.ps1" | iex
+irm "https://sirapi.itsumam.my.id/SiRapi.ps1" | iex
 ```
 
 Perintah tersebut akan membuka menu interaktif SiRapi. Skrip dijalankan langsung dari memori dan tidak meninggalkan file `SiRapi.ps1` di folder pengguna.
-
-Contoh `irm | iex` di atas paling mudah digunakan jika repository GitHub bersifat publik.
 
 ### Menjalankan Versi GitHub dengan Parameter
 
 Untuk memberikan parameter kepada skrip online, buat script block secara langsung dalam satu baris:
 
 ```powershell
-& ([scriptblock]::Create((irm "https://raw.githubusercontent.com/Umam07/SiRapi/main/SiRapi.ps1"))) -Path "$HOME\Downloads" -Advanced -Preview
+& ([scriptblock]::Create((irm "https://sirapi.itsumam.my.id/SiRapi.ps1"))) -Path "$HOME\Downloads" -Advanced -Preview
 ```
 
 Setelah hasil Preview diperiksa, jalankan proses sebenarnya:
 
 ```powershell
-& ([scriptblock]::Create((irm "https://raw.githubusercontent.com/Umam07/SiRapi/main/SiRapi.ps1"))) -Path "$HOME\Downloads" -Advanced -DuplicateAction Rename
+& ([scriptblock]::Create((irm "https://sirapi.itsumam.my.id/SiRapi.ps1"))) -Path "$HOME\Downloads" -Advanced -DuplicateAction Rename
 ```
 
 ## Catatan Keamanan untuk `irm | iex`
 
-Perintah `irm | iex` mengunduh dan langsung menjalankan kode dari internet. Gunakan hanya URL repository yang dipercaya.
+Perintah `irm | iex` mengunduh dan langsung menjalankan kode dari internet. Gunakan hanya URL yang dipercaya.
 
 Untuk memeriksa isi skrip sebelum menjalankannya:
 
 ```powershell
-irm "https://raw.githubusercontent.com/Umam07/SiRapi/main/SiRapi.ps1"
+irm "https://sirapi.itsumam.my.id/SiRapi.ps1"
 ```
 
 Perintah di atas hanya menampilkan isi skrip dan tidak menjalankannya.
@@ -251,7 +243,7 @@ Perintah di atas hanya menampilkan isi skrip dan tidak menjalankannya.
 Cara yang lebih hati-hati adalah mengunduh skrip terlebih dahulu:
 
 ```powershell
-Invoke-WebRequest "https://raw.githubusercontent.com/Umam07/SiRapi/main/SiRapi.ps1" -OutFile "$HOME\Downloads\SiRapi.ps1"
+Invoke-WebRequest "https://sirapi.itsumam.my.id/SiRapi.ps1" -OutFile "$HOME\Downloads\SiRapi.ps1"
 ```
 
 Kemudian periksa dan jalankan:
